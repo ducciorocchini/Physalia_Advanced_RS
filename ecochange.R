@@ -20,18 +20,22 @@ plot(amazon, col=viridis(100))
 # print available variables
 names(amazon)
 
+
 ##### echanges: Ecosystem changes #####
 ?echanges
 # Changes in layers of tree-canopy cover (TC) in the 'amazon' brick are computed:
-def <- echanges(amazon, eco = 'TC', # eco: Regular expression matching names of a subset of layers representing the target ecosystem variables
-                change = 'lossyear',
-                eco_range = c(1, 80),
-                get_unaffected = TRUE,
-                binary_output = FALSE,
-                mc.cores = 2)
+# The function produces ecosystem-change maps by masking cell values in a layer of ecosystem
+changes over a target set of ecosystem variables. The function also allows focusing the ecosystem-
+change analysis on a species distribution range
+
+def <- echanges(amazon,                 # Stack
+                eco = 'TC',             # eco: subset of layers representing the target ecosystem variables
+                change = 'lossyear')    # Name of the layer of ecosystem changes 
+                  
+
 # Method 'plot.echanges' allows comparing rasters using a common scale bar:
 plot.echanges(def, main="Changes in tree canopy cover [%]", 
-              labels=c("2000", "2005", "2010", "2015"))
+                labels=c("2000", "2005", "2010", "2015"))
 
 ##### EBVstats: compute ecosystem statistics #####
 st_amazon <- EBVstats(def)
