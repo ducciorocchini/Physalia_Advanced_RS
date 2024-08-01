@@ -1,3 +1,9 @@
+# Original code: lk-erz
+
+# Package paper by Wilson Lara and colleagues:
+# ecochange: An R-package to derive ecosystem change indicators from freely available earth observation products
+# https://doi.org/10.1111/2041-210X.13986
+
 # install.packages("ecochange")
 library(ecochange)
 
