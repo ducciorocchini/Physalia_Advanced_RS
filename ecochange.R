@@ -6,16 +6,19 @@
 
 # install.packages("ecochange")
 library(ecochange)
+library(viridis)
 
 ## RasterBrick of structural Essential Biodiversity Variables
 ## covering the extent of a location in the northern Amazon basin
 ## (Colombia) is imported:
-path. <- system.file('amazon.grd', package = 'ecochange')
-amazon <- brick(path.)
+path <- system.file('amazon.grd', package = 'ecochange')
+amazon <- brick(path)
+plot(amazon, col=viridis(100))
+
+# check standardization of legends
 
 # print available variables
 names(amazon)
-
 
 ##### echanges: Ecosystem changes #####
 ?echanges
@@ -30,8 +33,6 @@ def <- echanges(amazon, eco = 'TC', # eco: Regular expression matching names of 
 plot.echanges(def, main="Changes in tree canopy cover [%]", 
               labels=c("2000", "2005", "2010", "2015"))
 
-
-
 ##### EBVstats: compute ecosystem statistics #####
 st_amazon <- EBVstats(def)
 plot.EBVstats(st_amazon,
@@ -41,7 +42,6 @@ plot.EBVstats(st_amazon,
               main = 'Ecosystem changes',
               sub = 'Northern Amazon',
               fill = 'Layer')
-
 
 # gaugeIndicator: compute ecosystem areas
 am_areas <- gaugeIndicator(def,
@@ -56,7 +56,7 @@ plot.Indicator(am_areas)
 listGP()
 
 # example Colombia
-getGADM
+# getGADM
 muni <- getGADM(unit.nm = NULL,
                 level = 2, country = "COL",
                 path = tempdir())
@@ -71,5 +71,5 @@ rsp_cchaira <- getrsp(cchaira_roi,
 file.exists(rsp_cchaira)
 
 ## use getWRS to download Landsat data!
-wrs_cchaira <- getWRS(cchaira_roi)
-plot(wrs_cchaira)
+wrs_cchaira <- getWRS(cchaira_roi) # wait for the output
+plot(wrs_cchaira) # odd
