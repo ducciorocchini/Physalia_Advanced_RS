@@ -19,4 +19,17 @@ ggplot(lincoln_weather, aes(x = `Mean Temperature [F]`, y = Month, fill = stat(x
 # super!
 
 #----
+# Open polygons
+ggplot(iris, aes(x = Sepal.Length, y = Species, group = Species)) + 
+  geom_density_ridges(fill = "magenta")
 
+# Closed polygons
+ggplot(iris, aes(x = Sepal.Length, y = Species, group = Species)) + 
+  geom_density_ridges2(fill = "magenta")
+
+# Changin colors
+# Change the density area fill colors by groups
+ggplot(iris, aes(x = Sepal.Length, y = Species)) +
+  geom_density_ridges(aes(fill = Species)) +
+  scale_fill_manual(values = c("dark blue", "blue", "light green")) +
+  theme(legend.position = "none")
