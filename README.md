@@ -26,6 +26,7 @@ For packages to be installed from GitHub the devtools::install_github() function
 + library(devtools)
 + devtools::install_github("clauswilke/colorblindr")
 + devtools::install_github("ducciorocchini/cblindplot")
++ devtools::install_github("ducciorocchini/imageRY")
 + library(colorblindcheck)
 + library(colorblindr)
 + library(ggplot2)
