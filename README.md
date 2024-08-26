@@ -11,7 +11,7 @@ The course addresses spatial analysis of remote sensing data, making use of the 
 By the end of the course, participants will gain proficiency in coding their own analysis workflows and effectively reporting their findings using Markdown and LaTeX. The final part of the course will cover the fundamentals of LaTeX scripting for both articles and presentations.
 
 
-Learning outcomes
+> Learning outcomes
 
 - Spatio-ecological modelling of remote sensing data
 
