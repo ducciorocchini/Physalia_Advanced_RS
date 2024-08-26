@@ -48,7 +48,7 @@ By the end of the course, participants will gain proficiency in coding their own
 - R Packages related to colorblindness
 
 
-** Session 5 - Reporting (Thursday)
+## Session 5 - Reporting (Thursday)
 
 - Proper coloring of RS based graphs for colorblind people
 
