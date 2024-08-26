@@ -19,6 +19,19 @@ By the end of the course, participants will gain proficiency in coding their own
 
 - Proper reporting in LaTeX for coding texts and output reporting
 
+> Packages needed
+
+For packages to be installed from GitHub the devtools::install_github() function is used, for the other packages the install.packages() function is used. 
+
++ library(devtools)
++ devtools::install_github("clauswilke/colorblindr")
++ devtools::install_github("ducciorocchini/cblindplot")
++ library(colorblindcheck)
++ library(colorblindr)
++ library(ggplot2)
++ library(patchwork)
++ library(imageRy)
++ library(terra)
 
 ## Session 1 – Introduction (Monday)
 
