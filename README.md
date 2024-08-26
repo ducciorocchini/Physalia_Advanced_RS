@@ -4,7 +4,7 @@ Advanced Ecological Remote Sensing in R
 Daily schedule: 15:00 - 18:00 (Berlin time)
 
 
-Overview
+> Overview
 
 The course addresses spatial analysis of remote sensing data, making use of the most important packages in R containing advanced techniques.
 
