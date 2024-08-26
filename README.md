@@ -20,7 +20,7 @@ Learning outcomes
 - Proper reporting in LaTeX for coding texts and output reporting
 
 
-** Session 1 – Introduction (Monday)
+## Session 1 – Introduction (Monday)
 
 - Introduction to ecological remote sensing
 
@@ -29,7 +29,7 @@ Learning outcomes
 - The imageRy R package: how to develop your RS package
 [R packages: imageRy, terra]
 
-** Session 2 –  Measuring variability (Tuesday)
+## Session 2 –  Measuring variability (Tuesday)
 
 - How to measure ecosystem variability in space and time by information theory measures
 
@@ -37,11 +37,11 @@ Learning outcomes
 
 - The rasterdiv R package to couple information theory and spectral distances
 
-** Session 3 – Species distribution modelling with RS based variables (Wednesday)
+## Session 3 – Species distribution modelling with RS based variables (Wednesday)
 
 - The sdm R package to model species distributions
 
-** Session 4 (Wednesday)
+## Session 4 (Wednesday)
 
 - How to deal with colorblindness
 
