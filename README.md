@@ -33,6 +33,7 @@ For packages to be installed from GitHub the devtools::install_github() function
 + library(patchwork)
 + library(imageRy)
 + library(terra)
++ library(viridis)
 
 ## Session 1 – Introduction (Monday)
 
