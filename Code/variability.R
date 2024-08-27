@@ -48,5 +48,6 @@ shan3 <- Shannon(nir, window=3)
 plot(shan3)
 
 # Considering abundance AND distances
-rao3 <- paRao(nir, window=3, alpha=2)
+rao3 <- paRao(nir, window=3, alpha=2) # it is important that the terra package is uploaded first!
+plot(rao3)
 
