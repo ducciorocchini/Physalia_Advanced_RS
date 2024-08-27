@@ -34,6 +34,7 @@ For packages to be installed from GitHub the devtools::install_github() function
 + library(imageRy)
 + library(terra)
 + library(viridis)
++ library(rasterdiv)
 
 ## Session 1 – Introduction (Monday)
 
