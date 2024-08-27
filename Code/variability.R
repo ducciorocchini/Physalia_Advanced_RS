@@ -42,6 +42,11 @@ plot(sd7, col=viridisc)
 
 #------ Information theory via the rasterdiv package
 
+# Shannon
 
+shan3 <- Shannon(nir, window=3) 
+plot(shan3)
 
+# Considering abundance AND distances
+rao3 <- paRao(nir, window=3, alpha=2)
 
