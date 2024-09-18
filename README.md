@@ -57,7 +57,7 @@ For packages to be installed from GitHub the devtools::install_github() function
 
 - The sdm R package to model species distributions
 
-## Session 4 (Wednesday)
+## Session 4 - Colorblind friendly maps (Wednesday)
 
 - How to deal with colorblindness
 
