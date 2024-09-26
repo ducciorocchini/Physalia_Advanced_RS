@@ -84,3 +84,17 @@ ggplot(iris, aes(x = Sepal.Length, y = Species)) +
   geom_density_ridges(aes(fill = Species)) +
   scale_fill_manual(values = c("dark blue", "blue", "light green")) +
   theme(legend.position = "none")
+
+# using means and sd
+
+years <- c(2017, 2020, 2021, 2023)                                                                           #vettore years che sarà la mia asse delle x dove ogni barra sarà l'anno di rappresentanza
+means <- c(mean(ndsi_sd_17[], na.rm = TRUE), mean(ndsi_sd_20[], na.rm = TRUE),                               #calcolo delle medie per i singoli indici per i singoli anni, uso na.rm = true per far si che non tenga conto dei valori nulli
+           mean(ndsi_sd_21[], na.rm = TRUE), mean(ndsi_sd_23[], na.rm = TRUE))
+sds <- c(sd(ndsi_sd_17[], na.rm = TRUE), sd(ndsi_sd_20[], na.rm = TRUE),                                     #unifico le deviazioni standard calcolate in valori univoci
+         sd(ndsi_sd_21[], na.rm = TRUE), sd(ndsi_sd_23[], na.rm = TRUE))
+
+barplot(means, names.arg = years, ylim = c(0, max(means + sds)),                                             #rappresento i valori medi di NDSI nei differenti anni tenendo conto delle sue deviazioni standard, i valori presi da means, names.arg = years serve a impostare sull'asse delle x gli anni, ylim = limiti dei valori assey da 0 a media + deviazione standard
+        main = "Media NDSI con Deviazione Standard", ylab = "Valori NDSI", col = "lightblue")
+
+barplot(means, names.arg = years, ylim = c(0, max(means + sds)), 
+        main = "Media NDSI con Deviazione Standard", ylab = "Valori NDSI", col = c("lightblue","lightblue","lightblue","red")) #solo per identificare la barra con più differenza rispetto le altre le ho associato un altro colore
