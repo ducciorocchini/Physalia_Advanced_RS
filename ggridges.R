@@ -1,100 +1,26 @@
-# ggridges: Ridgeline Plots in 'ggplot2'
-
-# install.packages("ggridges")
-packagelist <- c("ggridges", "ggplot2")
-lapply(packagelist, require) #check!
-
-library(ggridges)
-library(ggplot2)
-library(terra)
-library(imageRy)
-library(dplyr) # for data.frame selection
-
-# temperature variations
-ggplot(lincoln_weather, aes(x = `Mean Temperature [F]`, y = Month, fill = stat(x))) +
-  geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01) +
-  scale_fill_viridis_c(name = "Temp. [F]", option = "C") +
-  labs(title = 'Temperatures in Lincoln NE in 2016')
-
-# super!
-
-#----
-# Open polygons
-ggplot(iris, aes(x = Sepal.Length, y = Species, group = Species)) + 
-  geom_density_ridges(fill = "magenta")
-
-# Closed polygons
-ggplot(iris, aes(x = Sepal.Length, y = Species, group = Species)) + 
-  geom_density_ridges2(fill = "magenta")
-
-# Changin colors
-
-#------------------------
-#------------------------
-# Code Elisa Thouverai
+# Code Elisa Thouverai 
 
 library(sf)
 library(terra)
 library(tidyverse)
 library(ggplot2)
+library(imageRy)
+library(ggridges)
 
-#FREQUENZA AREA PER ANNO
+r <- im.import("greenland")
 
-#Carico lo stack con immagini mensili per ogni anno in una lista
-fim <- list.files("...", full.names = T)
-ndvi <- rast(fim)
+df <- as.data.frame(r) 
 
-#Dataframe per il plot
-dfndvi <- as.data.frame(ndvi) %>%
+dfpl <- df %>%
   flatten_dbl() %>%
   as.data.frame() %>%
-  mutate(year = rep(2000:(2000 + nlyr(r) - 1), each = ncell(r)))
-colnames(dfndvi)[1] <- "ndvi"
+  mutate(year = rep(names(r), each = nrow(df)))
 
-#Plot frequenze
-ggplot(dfndvi, aes(x = ndvi, y = as.factor(year), fill = stat(x))) +
+colnames(dfpl)[1] <- "value"
+
+ggplot(dfpl, aes(x = value, y = as.factor(year), fill = stat(x))) +
   geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01) +
-  scale_fill_viridis_c(name = "NDVI", option = "C") 
-
-#SERIE TEMPORALE
-
-#Carico lo stack con immagini mensili per ogni anno in una lista
-fim <- list.files("...", full.names = T)
-lndvi <- lapply(fim, rast)
-
-#Estraggo ndvi medio 
-lndvi <- lapply(lndvi, function(im) {
-  df <- as.data.frame(im)
-  return(colMeans(df, na.rm = T))
-})
-
-#Dataframe per il plot
-dfndvi <- do.call(rbind, lndvi)
-dfndvi$month <- rep(1:12, each = length(lndvi))
-
-#Plot frequenze
-ggplot(dfndvi, aes(x = ndvi, y = month, fill = stat(x))) +
-  geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01) +
-  scale_fill_viridis_c(name = "NDVI", option = "C") 
+  scale_fill_viridis_c(option = "C") 
 
 
 
-# Change the density area fill colors by groups
-ggplot(iris, aes(x = Sepal.Length, y = Species)) +
-  geom_density_ridges(aes(fill = Species)) +
-  scale_fill_manual(values = c("dark blue", "blue", "light green")) +
-  theme(legend.position = "none")
-
-# using means and sd
-
-years <- c(2017, 2020, 2021, 2023)                                                                           #vettore years che sarà la mia asse delle x dove ogni barra sarà l'anno di rappresentanza
-means <- c(mean(ndsi_sd_17[], na.rm = TRUE), mean(ndsi_sd_20[], na.rm = TRUE),                               #calcolo delle medie per i singoli indici per i singoli anni, uso na.rm = true per far si che non tenga conto dei valori nulli
-           mean(ndsi_sd_21[], na.rm = TRUE), mean(ndsi_sd_23[], na.rm = TRUE))
-sds <- c(sd(ndsi_sd_17[], na.rm = TRUE), sd(ndsi_sd_20[], na.rm = TRUE),                                     #unifico le deviazioni standard calcolate in valori univoci
-         sd(ndsi_sd_21[], na.rm = TRUE), sd(ndsi_sd_23[], na.rm = TRUE))
-
-barplot(means, names.arg = years, ylim = c(0, max(means + sds)),                                             #rappresento i valori medi di NDSI nei differenti anni tenendo conto delle sue deviazioni standard, i valori presi da means, names.arg = years serve a impostare sull'asse delle x gli anni, ylim = limiti dei valori assey da 0 a media + deviazione standard
-        main = "Media NDSI con Deviazione Standard", ylab = "Valori NDSI", col = "lightblue")
-
-barplot(means, names.arg = years, ylim = c(0, max(means + sds)), 
-        main = "Media NDSI con Deviazione Standard", ylab = "Valori NDSI", col = c("lightblue","lightblue","lightblue","red")) #solo per identificare la barra con più differenza rispetto le altre le ho associato un altro colore
