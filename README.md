@@ -23,19 +23,24 @@ By the end of the course, participants will gain proficiency in coding their own
 
 For packages to be installed from GitHub the devtools::install_github() function is used, for the other packages the install.packages() function is used. 
 
+## Packages needed:
++ ggplot2
++ patchwork
++ imageRy: for RS data analysis
++ terra: for RS data analysis
++ colorblindcheck: for colorblind tests
++ colorblindr: for colorblind tests
++ viridis: for colorblind tests
++ rasterdiv: to measure variability
++ ggridges: for ridgeline plots
++ tidyverse: for ridgeline plots
+
+Installing packages from GitHub:
 + library(devtools)
 + devtools::install_github("clauswilke/colorblindr")
 + devtools::install_github("ducciorocchini/cblindplot")
 + devtools::install_github("ducciorocchini/imageRY")
-+ library(colorblindcheck)
-+ library(colorblindr)
-+ library(ggplot2)
-+ library(patchwork)
-+ library(imageRy)
-+ library(terra)
-+ library(viridis)
-+ library(rasterdiv)
-
+  
 ## Session 1 – Introduction (Monday)
 
 - Introduction to ecological remote sensing
