@@ -44,12 +44,12 @@ library(raster)
 # Working directory
 setwd("~/Documents/cblindplot/paper2")
 
-# Caricare immagini
+# Images
 list <- list.files(pattern="LC09_")
 imp <- lapply(list, raster)
 imm <- stack(imp)
 
-# Impostare palettes con 8 colori
+# Palettes 8 colors
 palraw <- rev(colorRampPalette(c("red", "orange", "yellow", "chartreuse", "cyan",
                              "blue", "deeppink", "red"))(100))
 palraw_grey <- rev(colorRampPalette(c("darkgrey", "orange", "yellow", "darkgrey",
