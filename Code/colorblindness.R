@@ -101,5 +101,7 @@ explot2
 explot + explot2
 
 ## cblindplot
-rainbowinput = "rainbow.png"
-cblindpot::cblind.plot(rainbowinput, cvd= "protanopia")
+setwd("~/Downloads/")
+rainbow <- rast("RainbowMap.jpg")
+# rainbowinput = "rainbow.png"
+cblind.plot(rainbow, cvd= "protanopia")
