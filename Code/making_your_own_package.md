@@ -8,6 +8,9 @@
 > Mandatory Files to be added
 + DESCRIPTION
 
+> Example
++ Look at the testp package in the GitHUb account of ducciorocchini
+
 Your package is now on! You just need to install it by:
 
 ```r
