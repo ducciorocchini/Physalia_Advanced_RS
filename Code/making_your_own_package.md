@@ -9,7 +9,7 @@
 + DESCRIPTION
 
 > Example
-+ Look at the testp package in the GitHUb account of ducciorocchini
++ Look at the [testp](https://github.com/ducciorocchini/testp) package in the GitHUb account of ducciorocchini
 
 Your package is now on! You just need to install it by:
 
