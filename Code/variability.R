@@ -52,9 +52,9 @@ ren <- Renyi(cropnir, window=9, alpha=seq(0,1,0.5), na.tolerance=0.2, np=1)
 
 # Considering abundance AND distances
 rao3 <- paRao(cropnir, window=3, alpha=2) # it is important that the terra package is uploaded first!
-# rasterdiv::Rao() is an alias 
 plot(rao3[[1]])
-plot(rao3[[1]][[1]]) 
+# rasterdiv::Rao() is an alias 
+# plot(rao3[[1]][[1]]) 
 
 # PCA to calculate variability
 sentpc <- im.pca(sent)
