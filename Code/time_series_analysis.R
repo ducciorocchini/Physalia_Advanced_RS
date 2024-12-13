@@ -2,7 +2,9 @@
 
 library(terra)
 library(imageRy)
-library(ggridges)
+library(ggridges) # for ridgeline plots
+library(ggplot2) # for ridgeline plots
+library(viridis) # for ridgeline plots
 
 im.list()
 
@@ -41,8 +43,10 @@ im.ridgeline(r, scale=2, "A")
 # Example with NDVI data
 
 # NDVI file
-ndvi <- im.import("NDVI")
+ndvi <- im.import("NDVI_2020")
+
+plot(ndvi)
 
 # Ridgeline plot
 names(ndvi) <- c("01 January","05 May","08 August","11 November")
-im.ridgeline(ndvi, 2, "A")
+im.ridgeline(ndvi, 2, "viridis")
