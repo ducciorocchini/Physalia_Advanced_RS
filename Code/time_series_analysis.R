@@ -37,3 +37,12 @@ r <- im.import("greenland")
 plot(r)
 
 im.ridgeline(r, scale=2, "A")
+
+# Example with NDVI data
+
+# NDVI file
+ndvi <- im.import("NDVI")
+
+# Ridgeline plot
+names(ndvi) <- c("01 January","05 May","08 August","11 November")
+im.ridgeline(ndvi, 2, "A")
