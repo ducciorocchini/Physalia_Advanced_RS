@@ -41,7 +41,7 @@ Installing packages from GitHub:
 + devtools::install_github("ducciorocchini/cblindplot")
 + devtools::install_github("ducciorocchini/imageRY")
   
-## Session 1 – Introduction (Monday)
+## Session 1 – Introduction (Monday, 3h)
 
 - Introduction to ecological remote sensing
 
@@ -50,7 +50,7 @@ Installing packages from GitHub:
 - The imageRy R package: how to develop your RS package
 [R packages: imageRy, terra]
 
-## Session 2 –  Measuring variability (Tuesday)
+## Session 2 –  Measuring variability (Tuesday, 3h)
 
 - How to measure ecosystem variability in space and time by information theory measures
 
@@ -58,18 +58,18 @@ Installing packages from GitHub:
 
 - The rasterdiv R package to couple information theory and spectral distances
 
-## Session 3 – Species distribution modelling with RS based variables (Wednesday)
+## Session 3 – Species distribution modelling with RS based variables (Wednesday, 1.5h)
 
 - The sdm R package to model species distributions
 
-## Session 4 - Colorblind friendly maps (Wednesday)
+## Session 4 - Colorblind friendly maps (Wednesday, 1.5h)
 
 - How to deal with colorblindness
 
 - R Packages related to colorblindness
 
 
-## Session 5 - Reporting (Thursday)
+## Session 5 - Reporting (Thursday, 3h)
 
 - Proper coloring of RS based graphs for colorblind people
 
