@@ -58,6 +58,8 @@ Installing packages from GitHub:
 
 - The rasterdiv R package to couple information theory and spectral distances
 
+- Variability in time: time series analysis
+
 ## Session 3 – Species distribution modelling with RS based variables (Wednesday, 1.5h)
 
 - The sdm R package to model species distributions
