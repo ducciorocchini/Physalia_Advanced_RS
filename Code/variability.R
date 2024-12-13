@@ -48,13 +48,25 @@ shan3 <- Shannon(cropnir, window=3)
 plot(shan3)
 
 #Rényi's Index
-ren <- Renyi(cropnir, window=9, alpha=seq(0,1,0.5), na.tolerance=0.2, np=1)
+ren3 <- Renyi(cropnir, window=3, alpha=seq(0,12,4), na.tolerance=0.2, np=1)
+renstack <- c(ren3[[1]], ren3[[2]], ren3[[3]], ren3[[4]])
+plot(renstack)
 
 # Considering abundance AND distances
 rao3 <- paRao(cropnir, window=3, alpha=2) # it is important that the terra package is uploaded first!
-plot(rao3[[1]])
+# plot(rao3[[1]])
 # rasterdiv::Rao() is an alias 
-# plot(rao3[[1]][[1]]) 
+plot(rao3[[1]][[1]]) 
+
+# Final plot
+divmetrics <- c(shan3, renstack, rao3[[1]][[1]])
+names(divmetrics) <- c("Shannon", "Rényi 0", "Rényi 4", "Rényi 8", "Rényi12", "Rao's Q")
+plot(divmetrics, col=magma(100))
+
+# Test on Rènyi with alpha tending to 1
+ren3 <- Renyi(cropnir, window=3, alpha=1, na.tolerance=0.2, np=1)
+shanren <- c(shan3, ren3[[1]])
+plot(shanren)
 
 # PCA to calculate variability
 sentpc <- im.pca(sent)
