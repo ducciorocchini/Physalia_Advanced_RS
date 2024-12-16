@@ -51,6 +51,7 @@ plot(shan3)
 ren3 <- Renyi(cropnir, window=3, alpha=seq(0,12,4), na.tolerance=0.2, np=1)
 renstack <- c(ren3[[1]], ren3[[2]], ren3[[3]], ren3[[4]])
 plot(renstack)
+# plot(rast(unlist(renstack)) 
 
 # Considering abundance AND distances
 rao3 <- paRao(cropnir, window=3, alpha=2) # it is important that the terra package is uploaded first!
