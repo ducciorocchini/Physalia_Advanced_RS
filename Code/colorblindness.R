@@ -19,7 +19,8 @@ b4 <- rast("T32TQS_20230821T100601_B04_10m.jp2")
 b8 <- rast("T32TQS_20230821T100601_B08_10m.jp2")
 
 sent <- c(b2, b3, b4, b8)
-plotRGB(sent[[2]], sent[[4]], sent[[3]])
+plot(sent)
+# plotRGB(sent[[2]], sent[[4]], sent[[3]])
 
 ndvi <- im.ndvi(sent, 4, 3)
 plot(ndvi)
@@ -73,6 +74,7 @@ library(devtools)
 # devtools::install_github("ducciorocchini/cblindplot")
 library(colorblindcheck)
 library(colorblindr)
+library(cblindplot)
 library(ggplot2)
 library(patchwork)
 library(imageRy)
@@ -101,7 +103,9 @@ explot2
 explot + explot2
 
 ## cblindplot
+# Search the network for a rainbow color map typing e.g. 
+# rainbow color map climate
 setwd("~/Downloads/")
-rainbow <- rast("RainbowMap.jpg")
+rainbow <- rast("rainbow.jpg")
 # rainbowinput = "rainbow.png"
 cblind.plot(rainbow, cvd= "protanopia")
