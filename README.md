@@ -35,6 +35,7 @@ For packages to be installed from GitHub the devtools::install_github() function
 + ggridges: for ridgeline plots
 + tidyverse: for ridgeline plots
 + sdm: for species distribution modelling
++ raster: to run functions in the sdm package
 
 Installing packages from GitHub:
 + library(devtools)
