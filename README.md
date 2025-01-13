@@ -39,7 +39,7 @@ Installing packages from GitHub:
 + library(devtools)
 + devtools::install_github("clauswilke/colorblindr")
 + devtools::install_github("ducciorocchini/cblindplot")
-+ devtools::install_github("ducciorocchini/imageRY")
++ devtools::install_github("ducciorocchini/imageRy")
   
 ## Session 1 – Introduction (Monday, 3h)
 
