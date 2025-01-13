@@ -1,0 +1,113 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+
+\usetheme{Frankfurt}
+\usecolortheme{dove}
+
+\title{My first presentation in LaTeX}
+\author{Duccio Rocchini}
+%\date{}
+
+\institute{
+Talk held at: \\
+\bigskip
+\includegraphics[width=0.5\linewidth]{2025-living-planet-symposium.png}
+}
+
+\begin{document}
+
+\maketitle
+
+\AtBeginSection[] % Do nothing for \section*
+{
+\begin{frame}{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\section{Introduction}
+
+\begin{frame}{My very first slide in beamer!}
+    My first text in beamer
+\end{frame}
+
+\begin{frame}{Fonts dimensions}
+    \begin{itemize}
+        \item Normal size text 
+        \item \scriptsize{Script size text}
+        \item \huge{Huge text}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Itemizing}
+    \begin{itemize}
+        \item My \textbf{first} text in beamer
+        \item My \textbf{second} text in beamer
+        \item My \textbf{third} text in beamer
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Itemizing}
+    \begin{itemize}
+        \item My first text in beamer
+        \pause \item My second text in beamer
+        \pause \item My third text in beamer
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Figure}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\linewidth]{OSIRIS_Mars_true_color}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Figure}
+Are we so sure to be alone in the Universe?
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\linewidth]{OSIRIS_Mars_true_color}
+    \end{figure}
+\end{frame}
+
+\section{Methods}
+
+\begin{frame}{Sphere formula}
+   \begin{figure}
+        \centering
+        \includegraphics[width=0.2\linewidth]{OSIRIS_Mars_true_color}
+    \end{figure}
+    In order to calculate the volume of Mars we can use the following formula:
+    \begin{equation}
+        V=\frac{4}{3} \times \pi \times r^3
+    \end{equation}
+    How to derive the radius?
+    \begin{equation}
+        r=\sqrt[3]{\frac{3V}{4\pi}}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Figure}
+Are we so sure to be alone in the Universe?
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.4\linewidth]{OSIRIS_Mars_true_color}
+        \includegraphics[width=0.4\linewidth]{OSIRIS_Mars_true_color}
+    \end{figure}
+\end{frame}
+
+\section{Results}
+
+\begin{frame}{Figure}
+Are we so sure to be alone in the Universe?
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.3\linewidth]{OSIRIS_Mars_true_color}
+        \includegraphics[width=0.3\linewidth]{OSIRIS_Mars_true_color} \\
+        \includegraphics[width=0.3\linewidth]{OSIRIS_Mars_true_color}
+        \includegraphics[width=0.3\linewidth]{OSIRIS_Mars_true_color}        
+    \end{figure}
+\end{frame}
+
+\end{document}
