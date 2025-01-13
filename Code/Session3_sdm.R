@@ -2,10 +2,12 @@
 
 # install.packages("sdm")
 # install.packages("rgdal", dependencies=T)
+# install.packages("viridis")
 
 library(sdm)
 library(raster) # predictors
-library(rgdal) # species
+# library(rgdal) # species
+library(viridis)
 
 file <- system.file("external/species.shp", package="sdm") 
 species <- shapefile(file)
@@ -34,20 +36,19 @@ lst
 preds <- stack(lst)
 
 # plot preds
-cl <- colorRampPalette(c('blue','orange','red','yellow')) (100)
-plot(preds, col=cl)
+plot(preds, col=viridis(100))
 
 # plot predictors and occurrences
-plot(preds$elevation, col=cl)
+plot(preds$elevation, col=viridis(100))
 points(species[species$Occurrence == 1,], pch=16)
 
-plot(preds$temperature, col=cl)
+plot(preds$temperature, col=viridis(100))
 points(species[species$Occurrence == 1,], pch=16)
 
-plot(preds$precipitation, col=cl)
+plot(preds$precipitation, col=viridis(100))
 points(species[species$Occurrence == 1,], pch=16)
 
-plot(preds$vegetation, col=cl)
+plot(preds$vegetation, col=viridis(100))
 points(species[species$Occurrence == 1,], pch=16)
 
 # model
@@ -62,7 +63,7 @@ m1 <- sdm(Occurrence ~ elevation + precipitation + temperature + vegetation, dat
 p1 <- predict(m1, newdata=preds) 
 
 # plot the output
-plot(p1, col=cl)
+plot(p1, col=viridis(100))
 points(species[species$Occurrence == 1,], pch=16)
 
 # add to the stack
@@ -74,6 +75,6 @@ plot(s1, col=cl)
 # choose a vector of names for the stack, looking at the previous graph, qhich are:
 names(s1) <- c('elevation', 'precipitation', 'temperature', 'vegetation', 'model')
 # and then replot!:
-plot(s1, col=cl)
+plot(s1, col=viridis(100))
 # you are done, with one line of code (as usual!)
 
