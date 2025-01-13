@@ -34,6 +34,7 @@ For packages to be installed from GitHub the devtools::install_github() function
 + rasterdiv: to measure variability
 + ggridges: for ridgeline plots
 + tidyverse: for ridgeline plots
++ sdm: for species distribution modelling
 
 Installing packages from GitHub:
 + library(devtools)
