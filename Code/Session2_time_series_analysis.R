@@ -34,12 +34,6 @@ im.plotRGB(gr, r=1, g=2, b=4)
 # gr: 2000, 2005, 2010, 2015
 
 # Ridgeline plots
-
-r <- im.import("greenland")
-plot(r)
-
-im.ridgeline(r, scale=2, "A")
-
 # Example with NDVI data
 
 # NDVI file
