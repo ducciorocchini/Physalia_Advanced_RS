@@ -34,15 +34,14 @@ par(mfrow=c(1,2))
 plot(sd3, col=inferno(100))
 plot(sd7, col=inferno(100))
 
-# original image plus the 7x7 sd
-im.plotRGB(sent, r=2, g=1, b=3)
-plot(sd7)
-
 #------ Information theory via the rasterdiv package
+
+par(mfrow=c(2,2))
 
 # Shannon
 ext <- c(0, 20, 0, 20)
 cropnir <- crop(nir, ext)
+plot(cropnir)
 
 shan3 <- Shannon(cropnir, window=3) 
 plot(shan3)
