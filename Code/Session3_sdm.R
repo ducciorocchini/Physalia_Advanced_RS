@@ -66,15 +66,5 @@ p1 <- predict(m1, newdata=preds)
 plot(p1, col=viridis(100))
 points(species[species$Occurrence == 1,], pch=16)
 
-# add to the stack
-s1 <- stack(preds,p1)
-plot(s1, col=cl)
 
-# Do you want to change names in the plot of the stack?
-# Here your are!:
-# choose a vector of names for the stack, looking at the previous graph, qhich are:
-names(s1) <- c('elevation', 'precipitation', 'temperature', 'vegetation', 'model')
-# and then replot!:
-plot(s1, col=viridis(100))
-# you are done, with one line of code (as usual!)
 
