@@ -50,12 +50,15 @@ vinicunca <- rast("vinicunca.jpg")
 
 plot(vinicunca)
 
-par(mfrow=c(1,2))
 plot(vinicunca)
 
-palraw_grey <- colorRampPalette(c("light blue", "darkgoldenrod", "dark grey",
+par(mfrow=c(1,2))
+im.plotRGB(vinicunca, 1,2,3, title="Standard vision")
+im.plotRGB(vinicunca, 2,2,3, title="Protanopia")
+
+# palraw_grey <- colorRampPalette(c("light blue", "darkgoldenrod", "dark grey",
                                     "white", "light blue"))(100)
-plot(vinicunca[[1]], col=palraw_grey)
+# plot(vinicunca[[1]], col=palraw_grey)
 
 # Check for color blindness
 
