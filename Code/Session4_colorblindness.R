@@ -12,17 +12,10 @@
 library(imageRy)
 library(terra)
 
-setwd("~/Documents/cblindplot/paper2/sent_cblind/S2A_MSIL2A_20230821T100601_N0509_R022_T32TQS_20230821T163000.SAFE/GRANULE/L2A_T32TQS_A042633_20230821T101414/IMG_DATA/R10m")
-b2 <- rast("T32TQS_20230821T100601_B02_10m.jp2")
-b3 <- rast("T32TQS_20230821T100601_B03_10m.jp2")
-b4 <- rast("T32TQS_20230821T100601_B04_10m.jp2")
-b8 <- rast("T32TQS_20230821T100601_B08_10m.jp2")
+im.list()
+sentdol <- im.import("sentinel.dolomites.")
 
-sent <- c(b2, b3, b4, b8)
-plot(sent)
-# plotRGB(sent[[2]], sent[[4]], sent[[3]])
-
-ndvi <- im.ndvi(sent, 4, 3)
+ndvi <- im.ndvi(sentdol, 4, 3)
 plot(ndvi)
 
 # grey scale, blue-red, brown-green etc etc.
@@ -35,36 +28,19 @@ plot(ndvi, col=clgr)
 plot(ndvi, col=clbr)
 plot(ndvi, col=clbg)
 
-############### Color vision simulation - Emma Donini
+############### Color vision simulation
 
-library(RStoolbox)
-library(patchwork)
-library(ggplot2)
-library(raster)
-
-# Working directory
-setwd("~/Documents/cblindplot/paper2")
-
-# Images
-list <- list.files(pattern="LC09_")
-imp <- lapply(list, raster)
-imm <- stack(imp)
+par(mfrow=c(1,2))
 
 # Palettes 8 colors
-palraw <- rev(colorRampPalette(c("red", "orange", "yellow", "chartreuse", "cyan",
-                             "blue", "deeppink", "red"))(100))
-palraw_grey <- rev(colorRampPalette(c("darkgrey", "orange", "yellow", "darkgrey",
-                                  "cyan", "blue", "dark green", "darkgrey"))(100))
+palraw <- colorRampPalette(c("red", "orange", "red", "chartreuse", "cyan",
+                             "blue"))(100)
+palraw_grey <- colorRampPalette(c("dark orange", "orange", "grey", "dark grey",
+                                  "light grey", "blue"))(100)
 
 # Plot
-
-ext <- c(203000, 287000, 69000, 161000)
-imm.c <- crop(imm, ext)
-plot(imm.c[[4]])  
-
-par(mfrow=c(1, 2))
-plot(imm.c[[4]], col=palraw, main="Normal vision")
-plot(imm.c[[4]], col=palraw_grey, main="Protanopia")
+plot(ndvi, col=palraw)
+plot(ndvi, col=palraw_grey)
 
 # Check for color blindness
 
@@ -94,10 +70,12 @@ palette_check(rainbow_pal, plot=TRUE)
 
 explot <- ggplot(iris, aes(Sepal.Length, fill=Species)) +
 geom_density(alpha=0.7)
+explot 
+
 colorblindr::cvd_grid(explot)
 
 explot2 <- ggplot(iris, aes(Sepal.Length, fill = Species)) + 
-  geom_density(alpha = 0.7) + scale_fill_OkabeIto()
+  geom_density(alpha=0.7) + scale_fill_OkabeIto()
 explot2
 
 explot + explot2
