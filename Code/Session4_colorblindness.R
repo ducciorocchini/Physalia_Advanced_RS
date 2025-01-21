@@ -32,7 +32,8 @@ plot(ndvi, col=clbg)
 
 par(mfrow=c(1,2))
 
-# Palettes 8 colors
+# Palettes 
+# Colors in R: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf
 palraw <- colorRampPalette(c("red", "orange", "red", "chartreuse", "cyan",
                              "blue"))(100)
 palraw_grey <- colorRampPalette(c("dark orange", "orange", "grey", "dark grey",
