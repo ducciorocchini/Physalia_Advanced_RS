@@ -1,5 +1,4 @@
 # Species Distribution Modelling
-
 # install.packages("sdm")
 # install.packages("rgdal", dependencies=T)
 # install.packages("viridis")
@@ -39,16 +38,16 @@ preds <- stack(lst)
 plot(preds, col=viridis(100))
 
 # plot predictors and occurrences
-plot(preds$elevation, col=viridis(100))
+plot(preds$elevation, col=viridis(100), main="elevation")
 points(species[species$Occurrence == 1,], pch=16)
 
-plot(preds$temperature, col=viridis(100))
+plot(preds$temperature, col=viridis(100), main="temperature")
 points(species[species$Occurrence == 1,], pch=16)
 
-plot(preds$precipitation, col=viridis(100))
+plot(preds$precipitation, col=viridis(100), main="precipitation")
 points(species[species$Occurrence == 1,], pch=16)
 
-plot(preds$vegetation, col=viridis(100))
+plot(preds$vegetation, col=viridis(100), main="vegetation")
 points(species[species$Occurrence == 1,], pch=16)
 
 # model
