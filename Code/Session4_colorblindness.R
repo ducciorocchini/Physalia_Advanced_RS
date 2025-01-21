@@ -50,8 +50,6 @@ vinicunca <- rast("vinicunca.jpg")
 
 plot(vinicunca)
 
-plot(vinicunca)
-
 par(mfrow=c(1,2))
 im.plotRGB(vinicunca, 1,2,3, title="Standard vision")
 im.plotRGB(vinicunca, 2,2,3, title="Protanopia")
