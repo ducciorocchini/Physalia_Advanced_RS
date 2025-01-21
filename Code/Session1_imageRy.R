@@ -168,6 +168,7 @@ m2006 <- im.import("matogrosso_ast_2006209_lrg.jpg")
 m1992c <- im.classify(m1992, num_clusters=2)
 # class 1 = human related areas and water
 # class 2 = forest
+x <- subst(sentc, c(1,2), c("forest","other"))
 
 m2006c <- im.classify(m2006, num_clusters=2)
 # class 1 = forest
