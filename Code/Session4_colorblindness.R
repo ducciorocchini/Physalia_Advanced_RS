@@ -42,6 +42,20 @@ palraw_grey <- colorRampPalette(c("dark orange", "orange", "grey", "dark grey",
 plot(ndvi, col=palraw)
 plot(ndvi, col=palraw_grey)
 
+# Vinicunca
+# https://fb.watch/xfBsEdtO4Z/
+setwd("~/Desktop/")
+vinicunca <- rast("vinicunca.jpg")
+
+plot(vinicunca)
+
+par(mfrow=c(1,2))
+plot(vinicunca)
+
+palraw_grey <- colorRampPalette(c("light blue", "darkgoldenrod", "dark grey",
+                                    "white", "light blue"))(100)
+plot(vinicunca[[1]], col=palraw_grey)
+
 # Check for color blindness
 
 # install.packages("colorblindcheck")
