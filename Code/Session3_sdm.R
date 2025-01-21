@@ -66,5 +66,3 @@ p1 <- predict(m1, newdata=preds)
 plot(p1, col=viridis(100))
 points(species[species$Occurrence == 1,], pch=16)
 
-
-
