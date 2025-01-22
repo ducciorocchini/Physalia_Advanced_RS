@@ -83,10 +83,3 @@ Installing packages from GitHub:
 
 
 
-## Session 4 - Measuring variability (Thursday)
-
-- How to measure ecosystem variability in space and time by information theory measures
-
-- Measuring variability via spectral distances
-
-- The rasterdiv R package to couple information theory and spectral distances
