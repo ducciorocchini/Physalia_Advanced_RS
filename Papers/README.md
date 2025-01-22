@@ -8,3 +8,4 @@
 + Rocchini, D., Neteler, M. (2012). Let the four freedoms paradigm apply to ecology. Trends in Ecology & Evolution, 27: 310-311. [5years-IF: 18.2] doi: http://dx.doi.org/10.1016/j.tree.2012.03.009 **TREE-Rocchini-Neteler.pdf**
 + Crameri, F., Shephard, G. E., & Heron, P. J. (2020). The misuse of colour in science communication. Nature communications, 11(1), 5444. doi: https://doi.org/10.5281/zenodo.1243862. **cramieri_colour.pdf**
 + Viénot, F., Brettel, H., Ott, L., M'barek, A. B., & Mollon, J. D. (1995). What do colour-blind people see?. Nature, 376(6536), 127-128. **NATURE.pdf**
++  Rocchini, D., Dadalt, L., Delucchi, L., Neteler, M., Palmer, M.W. (2014) Disentangling the role of remotely sensed spectral heterogeneity as a proxy for North American plant species richness. Community Ecology, 15: 37-43. **Not as a PDF since it is not open access**
