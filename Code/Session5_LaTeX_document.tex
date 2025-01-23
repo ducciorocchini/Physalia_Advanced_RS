@@ -3,6 +3,15 @@
 \usepackage{hyperref}
 \usepackage{natbib}
 
+\usepackage{markdown}
+\usepackage{tcolorbox}
+
+\usepackage{etoolbox}
+\pretocmd{\markdown}{\begin{tcolorbox}[colframe=green!25,
+colback=green!10]}{}{}
+\def\endmarkdown{\end{tcolorbox}}
+
+
 \renewcommand{\baselinestretch}{1.5} 
 
 \title{My first LaTeX file}
